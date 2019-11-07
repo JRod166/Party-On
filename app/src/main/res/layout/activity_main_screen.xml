@@ -7,6 +7,26 @@
     android:background="@drawable/first"
     tools:context=".mainScreen">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@+id/partyCode"
+        tools:layout_editor_absoluteX="56dp">
+
+        <TextView
+            android:id="@+id/latTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/lonTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </LinearLayout>
+
     <EditText
         android:id="@+id/partyCode"
         android:layout_width="240dp"
@@ -56,4 +76,5 @@
         android:text="Crear Fiesta"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/partyName" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

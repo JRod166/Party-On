@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import org.jetbrains.anko.toast
 
 class party : AppCompatActivity() {
@@ -15,6 +16,9 @@ class party : AppCompatActivity() {
         val intent = intent
         //val id = intent.getStringExtra("id")
         val name=intent.getStringExtra("name")
+        val latitude=intent.getStringExtra("latitude")
+        val longitude=intent.getStringExtra("longitude")
+        Toast.makeText(this, latitude+" "+longitude, Toast.LENGTH_LONG).show()
         //toast(id)
 
         //var code= findViewById(R.id.codeIn) as TextView

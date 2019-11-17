@@ -13,7 +13,7 @@ class mainScreen : AppCompatActivity() {
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://192.168.43.23:80/api/v1/join_party/")
+            .baseUrl("http://192.168.43.31:80/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

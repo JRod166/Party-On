@@ -25,7 +25,7 @@ class mainScreen : AppCompatActivity() {
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://192.168.43.31:80/")
+            .baseUrl("http://fast-sands-11156.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
@@ -44,6 +44,7 @@ class mainScreen : AppCompatActivity() {
         val name = findViewById(R.id.partyName) as EditText
         val join = findViewById(R.id.joinParty) as Button
         val create = findViewById(R.id.createParty) as Button
+        val location = findViewById(R.id.gpsParty) as Button
 
         val intent = intent
         val id = intent.getStringExtra("id")
@@ -72,6 +73,19 @@ class mainScreen : AppCompatActivity() {
                 intentParty.putExtra("latitude",body.getLatitude())
                 intentParty.putExtra("longitude",body.getLongitude())
                 startActivity(intentParty)
+            }
+        }
+
+        location.setOnClickListener{
+            var mAPIService = getRetrofit().create(APIService::class.java)
+            val response = mAPIService.closeParties(locationUp.latitude.toString(),locationUp.longitude.toString()).execute()
+            val body = response.body()
+            if(body!!.getStatus() == "200")
+            {
+                val intentParties = Intent(this,parties::class.java)
+                intentParties.putExtra("latitude",locationUp.latitude.toString())
+                intentParties.putExtra("longitude",locationUp.longitude.toString())
+                startActivity(intentParties)
             }
         }
     }

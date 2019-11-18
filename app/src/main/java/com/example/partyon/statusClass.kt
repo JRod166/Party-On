@@ -5,6 +5,11 @@ import com.google.gson.annotations.Expose
 
 
 
+
+
+
+
+
 public class statusClass {
     @SerializedName("email")
     @Expose
@@ -210,4 +215,28 @@ public class partyClass{
     fun setMessage(status: String) {
         this.message= status
     }
+}
+
+public class partiesClass {
+
+    @SerializedName("status")
+    @Expose
+    private var status: String? = null
+    @SerializedName("content")
+    @Expose
+    private var content: List<partyClass>? = null
+    fun getStatus(): String? {
+        return status
+    }
+    fun setStatus(status: String) {
+        this.status = status
+    }
+    fun getContent(): List<partyClass>? {
+        return content
+    }
+
+    fun setContent(content: List<partyClass>) {
+        this.content = content
+    }
+
 }

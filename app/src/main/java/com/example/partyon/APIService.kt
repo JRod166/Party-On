@@ -4,14 +4,14 @@ import retrofit2.http.*
 
 
 interface APIService {
-    @POST("/api/v1/user_login/")
+    @POST("/api/v1/user_login")
     @FormUrlEncoded
     fun login(
         @Field("email") email: String,
         @Field("password") password: String
     ): Call<statusClass>
 
-    @POST("/api/v1/user_register/")
+    @POST("/api/v1/user_register")
     @FormUrlEncoded
     fun register(
         @Field("name") name: String,
@@ -20,7 +20,7 @@ interface APIService {
         @Field("password") password: String
     ): Call<registerClass>
 
-    @POST("/api/v1/join_party/")
+    @POST("/api/v1/join_party")
     @FormUrlEncoded
     fun join(
         @Field("code") code:String
@@ -34,4 +34,11 @@ interface APIService {
         @Field("latitude") latitude:String,
         @Field("longitude") longitude:String
     ): Call<partyClass>
+
+    @POST("/api/v1/evaluate_near_parties")
+    @FormUrlEncoded
+    fun closeParties(
+        @Field("latitude") latitude: String,
+        @Field("longitude") longitude: String
+    ): Call<partiesClass>
 }

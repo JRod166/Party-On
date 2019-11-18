@@ -77,4 +77,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/partyName" />
 
+    <Button
+        android:id="@+id/gpsParty"
+        android:layout_width="72dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/ic_dialog_map"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createParty" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

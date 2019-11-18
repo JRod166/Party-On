@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getRetrofit():Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://192.168.43.31:80")
+            .baseUrl("http://fast-sands-11156.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

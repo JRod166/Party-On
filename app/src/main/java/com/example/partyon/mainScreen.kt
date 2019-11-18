@@ -54,7 +54,7 @@ class mainScreen : AppCompatActivity() {
             val response=mAPIService.join(code.text.toString()).execute()
             val body=response.body()
             if(body!!.getStatus() == "200") {
-                toast(body.getName().toString())
+                //toast(body.getId().toString())
                 val intentParty = Intent(this,party::class.java)
                 intentParty.putExtra("id",body.getId())
                 intentParty.putExtra("name",body.getName())

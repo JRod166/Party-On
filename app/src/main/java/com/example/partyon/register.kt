@@ -38,7 +38,7 @@ class register : AppCompatActivity() {
             }
             else
             {
-                toast("Ususario registrado")
+                toast("Usuario registrado")
                 finish()
             }
         }

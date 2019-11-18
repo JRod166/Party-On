@@ -16,16 +16,30 @@ import org.jetbrains.anko.toast
 import org.jetbrains.anko.uiThread
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.util.Log
+import java.util.*
+
 
 class addSong : AppCompatActivity(),SearchView.OnQueryTextListener {
     lateinit var adapterSongs:songsAdapter
+    lateinit var id: String
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_add_song)
+        searchSong.setOnQueryTextListener(this)
+        id = intent.getStringExtra("id")
+    }
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://api.deezer.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
     private fun getRetrofit2(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("http://fast-sands-11156.herokuapp.com/")
@@ -35,14 +49,16 @@ class addSong : AppCompatActivity(),SearchView.OnQueryTextListener {
 
     private fun songItemClicked(songItem : Datum) {
         var mAPIService2 = getRetrofit2().create(APIService::class.java)
-        toast("ToDo")
+        val response = mAPIService2.addPool(id,songItem.id.toString(),songItem.album?.coverMedium.toString(),
+                                        songItem.title.toString(),songItem.album?.title.toString(),
+                                        songItem.artist?.name.toString(),songItem.duration.toString()).execute()
+        val body= response.body()
+        if(body!!.status.toString()=="400")
+        {
+            toast("Ha ocurrido un error")
+        }
+        finish()
 
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_song)
-        searchSong.setOnQueryTextListener(this)
     }
 
     override fun onQueryTextChange(newText: String?): Boolean {

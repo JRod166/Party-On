@@ -143,6 +143,8 @@ public class registerClass {
     }
 }
 
+
+
 public class partyClass{
     @SerializedName("id")
     @Expose
@@ -238,5 +240,22 @@ public class partiesClass {
     fun setContent(content: List<partyClass>) {
         this.content = content
     }
+
+}
+
+class partyStatus {
+
+    @SerializedName("status")
+    @Expose
+    var status: String? = null
+    @SerializedName("name")
+    @Expose
+    var name: String? = null
+    @SerializedName("latitude")
+    @Expose
+    var latitude: String? = null
+    @SerializedName("longitude")
+    @Expose
+    var longitude: String? = null
 
 }

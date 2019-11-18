@@ -42,6 +42,17 @@ interface APIService {
         @Field("longitude") longitude: String
     ): Call<partiesClass>
 
+    @POST("/api/v1/add_pool")
+    @FormUrlEncoded
+    fun addPool(
+        @Field("party_id") party_id: String,
+        @Field("song_id") song_id: String,
+        @Field("image") image:String,
+        @Field("title") title: String,
+        @Field("album") album: String,
+        @Field("artist") artist: String,
+        @Field("duration") duration: String
+    ) : Call<partyStatus>
 
     @GET
     fun searchSongs(@Url url:String) : Call<Songs>

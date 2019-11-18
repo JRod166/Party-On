@@ -41,4 +41,8 @@ interface APIService {
         @Field("latitude") latitude: String,
         @Field("longitude") longitude: String
     ): Call<partiesClass>
+
+
+    @GET
+    fun searchSongs(@Url url:String) : Call<Songs>
 }

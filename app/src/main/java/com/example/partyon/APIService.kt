@@ -30,6 +30,8 @@ interface APIService {
     @FormUrlEncoded
     fun create(
         @Field("name") name:String,
-        @Field("host_user_id") host_user_id:String
+        @Field("host_user_id") host_user_id:String,
+        @Field("latitude") latitude:String,
+        @Field("longitude") longitude:String
     ): Call<partyClass>
 }

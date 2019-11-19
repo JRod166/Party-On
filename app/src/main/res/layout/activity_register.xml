@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout android:gravity="center" xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/my_bg_anim"
-    tools:context=".register">
+    tools:context=".register"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        />
 
     <EditText
         android:id="@+id/regName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="99dp"
-        android:layout_marginLeft="99dp"
-        android:layout_marginTop="200dp"
         android:ems="10"
+        style="@style/custom_edit_style"
         android:inputType="textPersonName"
         android:hint="Name"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,12 +27,10 @@
 
     <EditText
         android:id="@+id/regLastName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="99dp"
-        android:layout_marginLeft="99dp"
-        android:layout_marginTop="30dp"
         android:ems="10"
+        style="@style/custom_edit_style"
         android:inputType="textPersonName"
         android:hint="Last Name"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,12 +38,10 @@
 
     <EditText
         android:id="@+id/regMail"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="99dp"
-        android:layout_marginLeft="99dp"
-        android:layout_marginTop="30dp"
         android:ems="10"
+        style="@style/custom_edit_style"
         android:inputType="textPersonName"
         android:hint="email@domain.com"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,12 +49,10 @@
 
     <EditText
         android:id="@+id/regPassword"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="99dp"
-        android:layout_marginLeft="99dp"
-        android:layout_marginTop="30dp"
         android:ems="10"
+        style="@style/custom_edit_style"
         android:inputType="textPassword"
         android:hint="Password"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,14 +60,12 @@
 
     <Button
         android:id="@+id/buttonReg"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginLeft="144dp"
-        android:layout_marginTop="30dp"
         android:text="Registrarse"
+        style="@style/custom_edit_style"
         android:background="@drawable/roundshapebtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regPassword" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

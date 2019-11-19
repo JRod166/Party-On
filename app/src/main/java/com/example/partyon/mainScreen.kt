@@ -56,8 +56,8 @@ class mainScreen : AppCompatActivity() {
             if(body!!.getStatus() == "200") {
                 //toast(body.getId().toString())
                 val intentParty = Intent(this,party::class.java)
-                intentParty.putExtra("id",body.getId())
-                intentParty.putExtra("name",body.getName())
+                intentParty.putExtra("id",body.getId().toString())
+                intentParty.putExtra("name",body.getName().toString())
                 startActivity(intentParty)
             }
         }
@@ -66,12 +66,10 @@ class mainScreen : AppCompatActivity() {
             val response=mAPIService.create(name.text.toString(),id.toString(),locationUp.latitude.toString(),locationUp.longitude.toString()).execute()
             val body=response.body()
             if(body!!.getStatus() == "200") {
-                toast(body.getId().toString())
+                toast(response.toString())
                 val intentParty = Intent(this,party::class.java)
-                intentParty.putExtra("id",body.getId())
-                intentParty.putExtra("name",body.getName())
-                intentParty.putExtra("latitude",body.getLatitude())
-                intentParty.putExtra("longitude",body.getLongitude())
+                intentParty.putExtra("id",body.getId().toString())
+                intentParty.putExtra("name",body.getName().toString())
                 startActivity(intentParty)
             }
         }

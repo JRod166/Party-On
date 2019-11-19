@@ -31,12 +31,9 @@ class party : AppCompatActivity() {
         val intent = intent
         val name=intent.getStringExtra("name")
         id_party = intent.getStringExtra("id").toString()
-        val latitude=intent.getStringExtra("latitude")
-        val longitude=intent.getStringExtra("longitude")
-        //Toast.makeText(this, latitude+" "+longitude, Toast.LENGTH_LONG).show()
-        //toast(id)
+
         var btnNewSong= findViewById(R.id.addSong) as Button
-        //var code= findViewById(R.id.codeIn) as TextView
+
         var nameTV = findViewById(R.id.nameIn) as TextView
 
         btnNewSong.setOnClickListener {
@@ -58,8 +55,7 @@ class party : AppCompatActivity() {
             }
         }
 
-        //toast(id.toString())
-        //code.text = id
+
         nameTV.text = name
 
     }

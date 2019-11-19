@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/first"
+    android:background="@drawable/my_bg_anim"
     tools:context=".register">
 
     <EditText
@@ -14,10 +14,9 @@
         android:layout_marginStart="99dp"
         android:layout_marginLeft="99dp"
         android:layout_marginTop="200dp"
-        android:background="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,10 +27,9 @@
         android:layout_marginStart="99dp"
         android:layout_marginLeft="99dp"
         android:layout_marginTop="30dp"
-        android:background="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Last Name"
+        android:hint="Last Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regName" />
 
@@ -42,10 +40,9 @@
         android:layout_marginStart="99dp"
         android:layout_marginLeft="99dp"
         android:layout_marginTop="30dp"
-        android:background="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="email@domain.com"
+        android:hint="email@domain.com"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regLastName" />
 
@@ -56,10 +53,9 @@
         android:layout_marginStart="99dp"
         android:layout_marginLeft="99dp"
         android:layout_marginTop="30dp"
-        android:background="#FFFFFF"
         android:ems="10"
         android:inputType="textPassword"
-        android:text="password"
+        android:hint="Password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regMail" />
 
@@ -70,8 +66,8 @@
         android:layout_marginStart="144dp"
         android:layout_marginLeft="144dp"
         android:layout_marginTop="30dp"
-        android:text="Registrarse
-"
+        android:text="Registrarse"
+        android:background="@drawable/roundshapebtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regPassword" />
 

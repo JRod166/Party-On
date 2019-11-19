@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/first"
+    android:background="@drawable/my_bg_anim"
     android:orientation="vertical"
     tools:context=".party">
 
@@ -42,6 +42,7 @@
             android:id="@+id/addSong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/roundshapebtn"
             android:text="Add a new song" />
 
         <androidx.recyclerview.widget.RecyclerView

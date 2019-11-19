@@ -9,7 +9,8 @@
     android:layout_marginTop="5dp">
 
 
-<TableRow
+
+    <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -51,18 +52,18 @@
                 android:layout_weight="0.25"
                 android:orientation="horizontal">
 
-                <ProgressBar
+                <TextView
                     android:id="@+id/pbSong"
-                    style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.8" />
+                    android:layout_weight="0.5"
+                    android:text="# de votos: "/>
 
                 <TextView
                     android:id="@+id/tvDuration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.2"
+                    android:layout_weight="0.5"
                     android:text="TextView" />
 
             </LinearLayout>

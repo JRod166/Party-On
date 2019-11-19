@@ -1,5 +1,6 @@
 package com.example.partyon
 
+import com.google.android.material.snackbar.Snackbar
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,7 +26,7 @@ class parties : AppCompatActivity() {
         val response=mAPIService.join(partItem.getId().toString()).execute()
         val body=response.body()
         if(body!!.getStatus() == "200") {
-            toast(body.getName().toString())
+
             val intentParty = Intent(this,party::class.java)
             intentParty.putExtra("id",body.getId())
             intentParty.putExtra("name",body.getName())

@@ -3,13 +3,6 @@ package com.example.partyon
 import com.google.gson.annotations.SerializedName
 import com.google.gson.annotations.Expose
 
-
-
-
-
-
-
-
 public class statusClass {
     @SerializedName("email")
     @Expose
@@ -257,5 +250,57 @@ class partyStatus {
     @SerializedName("longitude")
     @Expose
     var longitude: String? = null
+
+}
+
+class poolSong {
+
+    @SerializedName("id")
+    @Expose
+    var id: Int? = null
+    @SerializedName("party_id")
+    @Expose
+    var partyId: Int? = null
+    @SerializedName("frequency")
+    @Expose
+    var frequency: Int? = null
+    @SerializedName("created_at")
+    @Expose
+    var createdAt: String? = null
+    @SerializedName("updated_at")
+    @Expose
+    var updatedAt: String? = null
+    @SerializedName("song_id")
+    @Expose
+    var songId: Int? = null
+    @SerializedName("image")
+    @Expose
+    var image: String? = null
+    @SerializedName("title")
+    @Expose
+    var title: String? = null
+    @SerializedName("artist")
+    @Expose
+    var artist: String? = null
+    @SerializedName("duration")
+    @Expose
+    var duration: String? = null
+    @SerializedName("album")
+    @Expose
+    var album: String? = null
+
+}
+
+class Pool {
+
+    @SerializedName("status")
+    @Expose
+    var status: String? = null
+    @SerializedName("message")
+    @Expose
+    var message: String? = null
+    @SerializedName("content")
+    @Expose
+    var content: List<poolSong>? = null
 
 }

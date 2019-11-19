@@ -54,6 +54,16 @@ interface APIService {
         @Field("duration") duration: String
     ) : Call<partyStatus>
 
+    @POST("/api/v1/vote")
+    @FormUrlEncoded
+    fun vote(
+        @Field("song_id") song_id: String,
+        @Field("party_id") party_id: String
+    ) : Call<statusClass>
+
+    @GET
+    fun getTopTen(@Url url:String): Call<Pool>
+
     @GET
     fun searchSongs(@Url url:String) : Call<Songs>
 }

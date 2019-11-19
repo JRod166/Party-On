@@ -1,37 +1,24 @@
 package com.example.partyon
 
-import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.SearchView
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapplication.partiesAdapter
-
-import kotlinx.android.synthetic.main.activity_add_song.*
-import kotlinx.android.synthetic.main.activity_parties.*
+import kotlinx.android.synthetic.main.activity_new_song.*
 import org.jetbrains.anko.alert
-import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.toast
-import org.jetbrains.anko.uiThread
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import android.util.Log
-import java.util.*
 
-
-class addSong : AppCompatActivity(),SearchView.OnQueryTextListener {
+class newSong : AppCompatActivity(), SearchView.OnQueryTextListener {
     lateinit var adapterSongs:songsAdapter
-    lateinit var id: String
+    lateinit var party_id: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_song)
+        setContentView(R.layout.activity_new_song)
         searchSong.setOnQueryTextListener(this)
-        id = intent.getStringExtra("id")
+        party_id = intent.extras!!.getString("id").toString()
     }
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
@@ -49,9 +36,9 @@ class addSong : AppCompatActivity(),SearchView.OnQueryTextListener {
 
     private fun songItemClicked(songItem : Datum) {
         var mAPIService2 = getRetrofit2().create(APIService::class.java)
-        val response = mAPIService2.addPool(id,songItem.id.toString(),songItem.album?.coverMedium.toString(),
-                                        songItem.title.toString(),songItem.album?.title.toString(),
-                                        songItem.artist?.name.toString(),songItem.duration.toString()).execute()
+        val response = mAPIService2.addPool(party_id,songItem.id.toString(),songItem.album?.coverMedium.toString(),
+            songItem.title.toString(),songItem.album?.title.toString(),
+            songItem.artist?.name.toString(),songItem.duration.toString()).execute()
         val body= response.body()
         if(body!!.status.toString()=="400")
         {
@@ -60,6 +47,7 @@ class addSong : AppCompatActivity(),SearchView.OnQueryTextListener {
         finish()
 
     }
+
 
     override fun onQueryTextChange(newText: String?): Boolean {
         return true

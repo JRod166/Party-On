@@ -38,17 +38,18 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
         <Button
             android:id="@+id/addSong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Add a new song" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSongPool"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
 

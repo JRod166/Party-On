@@ -48,7 +48,7 @@ class party : AppCompatActivity() {
 
         }
 
-        fixedRateTimer("timer",false,0,5000){
+        fixedRateTimer("timer",false,0,1000){
             this@party.runOnUiThread {
                 var mAPIService = getRetrofit().create(APIService::class.java)
                 val response = mAPIService.getTopTen("/api/v1/get_top_ten/$id_party").execute()

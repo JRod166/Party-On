@@ -34,6 +34,10 @@ class party : AppCompatActivity() {
 
         var btnNewSong= findViewById(R.id.addSong) as Button
 
+        var code = findViewById(R.id.code_party) as TextView
+
+        code.text = id_party
+
         var nameTV = findViewById(R.id.nameIn) as TextView
 
         btnNewSong.setOnClickListener {

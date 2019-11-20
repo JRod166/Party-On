@@ -36,21 +36,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/registrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registrar"
-        style="@style/custom_edit_style"
-        android:background="@drawable/roundshapebtn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+
 
     <Button
         android:id="@+id/entrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Entrar"
+        style="@style/custom_edit_style"
+        android:background="@drawable/roundshapebtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <Button
+        android:id="@+id/registrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
         style="@style/custom_edit_style"
         android:background="@drawable/roundshapebtn"
         app:layout_constraintStart_toStartOf="parent"

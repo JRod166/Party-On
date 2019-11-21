@@ -217,6 +217,9 @@ public class partiesClass {
     @SerializedName("status")
     @Expose
     private var status: String? = null
+    @SerializedName("message")
+    @Expose
+    private var message: String? = null
     @SerializedName("content")
     @Expose
     private var content: List<partyClass>? = null
@@ -225,6 +228,12 @@ public class partiesClass {
     }
     fun setStatus(status: String) {
         this.status = status
+    }
+    fun getMessage(): String? {
+        return message
+    }
+    fun setMessage(message: String) {
+        this.message = message
     }
     fun getContent(): List<partyClass>? {
         return content
@@ -292,7 +301,6 @@ class poolSong {
 }
 
 class Pool {
-
     @SerializedName("status")
     @Expose
     var status: String? = null
@@ -303,4 +311,10 @@ class Pool {
     @Expose
     var content: List<poolSong>? = null
 
+    fun getStatus1(): String? {
+        return status
+    }
+    fun getMessage1(): String? {
+        return message
+    }
 }

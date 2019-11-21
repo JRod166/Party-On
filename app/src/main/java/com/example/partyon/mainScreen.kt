@@ -60,6 +60,10 @@ class mainScreen : AppCompatActivity() {
                 intentParty.putExtra("name",body.getName().toString())
                 startActivity(intentParty)
             }
+            if(body!!.getStatus() == "404")
+            {
+                toast(body.getMessage().toString())
+            }
         }
         create.setOnClickListener{
             var mAPIService = getRetrofit().create(APIService::class.java)
@@ -72,12 +76,17 @@ class mainScreen : AppCompatActivity() {
                 intentParty.putExtra("name",body.getName().toString())
                 startActivity(intentParty)
             }
+            if(body!!.getStatus() == "401")
+            {
+                toast(body.getMessage().toString())
+            }
         }
 
         location.setOnClickListener{
             var mAPIService = getRetrofit().create(APIService::class.java)
             val response = mAPIService.closeParties(locationUp.latitude.toString(),locationUp.longitude.toString()).execute()
             val body = response.body()
+            toast(body!!.getMessage().toString())
             if(body!!.getStatus() == "200")
             {
                 val intentParties = Intent(this,parties::class.java)
@@ -85,6 +94,7 @@ class mainScreen : AppCompatActivity() {
                 intentParties.putExtra("longitude",locationUp.longitude.toString())
                 startActivity(intentParties)
             }
+
         }
     }
 

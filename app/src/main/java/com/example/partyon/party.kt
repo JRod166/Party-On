@@ -53,12 +53,12 @@ class party : AppCompatActivity() {
                 var mAPIService = getRetrofit().create(APIService::class.java)
                 val response = mAPIService.getTopTen("/api/v1/get_top_ten/$id_party").execute()
                 val body=response.body()
+                if(body!!.getStatus1() == "404") {
+                    toast(body.getMessage1().toString())
+                }
                 addAdapter(body?.content)
-
-
             }
         }
-
 
         nameTV.text = name
 
@@ -76,6 +76,9 @@ class party : AppCompatActivity() {
         var mAPIService = getRetrofit().create(APIService::class.java)
         val response = mAPIService.getTopTen("/api/v1/get_top_ten/$id_party").execute()
         val body=response.body()
+        if(body!!.getStatus1() == "404") {
+            toast(body.getMessage1().toString())
+        }
         addAdapter(body?.content)
         toast(songItem.frequency.toString())
     }

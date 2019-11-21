@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             val body= response.body()
             if(body!!.getStatus() == "401")
             {
-                toast("Datos incorrectos, intente nuevamente")
+                toast(body!!.getMessage().toString())
             }
             else
             {

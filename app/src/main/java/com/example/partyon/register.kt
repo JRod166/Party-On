@@ -32,9 +32,10 @@ class register : AppCompatActivity() {
         registerBtn.setOnClickListener {
             var mAPIService = getRetrofit().create(APIService::class.java)
             val response=mAPIService.register(name.text.toString(),lastName.text.toString(),mail.text.toString(),password.text.toString()).execute()
-            if(response.body()!!.getStatus() == "406")
+            val body=response.body()
+            if(body!!.getStatus() == "406")
             {
-                toast("Este email ya ha sido registrado")
+                toast(body.getMessage().toString())
             }
             else
             {

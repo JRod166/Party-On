@@ -32,13 +32,14 @@ class party : AppCompatActivity() {
         val name=intent.getStringExtra("name")
         id_party = intent.getStringExtra("id").toString()
 
-        var btnNewSong= findViewById(R.id.addSong) as Button
+        val btnNewSong= findViewById(R.id.addSong) as Button
 
-        var code = findViewById(R.id.code_party) as TextView
+        val code = findViewById(R.id.code_party) as TextView
 
         code.text = id_party
 
-        var nameTV = findViewById(R.id.nameIn) as TextView
+        val nameTV = findViewById(R.id.nameIn) as TextView
+        nameTV.text = name
 
         btnNewSong.setOnClickListener {
             val addSongIntent = Intent(this,newSong::class.java)
@@ -56,11 +57,12 @@ class party : AppCompatActivity() {
                 if(body!!.getStatus1() == "404") {
                     toast(body.getMessage1().toString())
                 }
-                addAdapter(body?.content)
+                else {
+                    addAdapter(body?.content)
+                }
             }
         }
 
-        nameTV.text = name
 
     }
 
